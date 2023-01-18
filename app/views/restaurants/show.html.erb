@@ -1,6 +1,8 @@
 <h1><%= @restaurant.name %></h1>
 
-<p>What a wonderfull restaurant it is</p>
+<p>Bij De Pizzabakkers ben je altijd welkom om lekker te lunchen, borrelen of dineren. Het is een plek voor iedereen die van ambachtelijke Romeinse pizza's houdt en graag een glas prosecco drinkt. Maar niks chics hoor! We creëren graag een ontspannen sfeer, waarin iedereen zich thuis voelt. Jong, oud, buurtbewoners of mensen van verre. Bij De Pizzabakkers eet iedereen goed. Onze basis is Italiaanse pizza op haar best: in de houtoven gebakken, met verse ingrediënten bereid en met liefde gemaakt.
+
+</p>
 
 <h3>Restaurant information</h3>
 <ul>
@@ -9,7 +11,9 @@
   <li><strong>Phone number:</strong> <%= @restaurant.phone_number %></li>
   <li><strong>Categories:</strong> <%= @restaurant.category %></li>
 </ul>
-
+<BR>
+<%= link_to 'Back to all restaurants', restaurants_path %>
+<BR><BR>
 <h3>Reviews</h3>
 
 <ul class="list-group">
@@ -21,10 +25,6 @@
   <% end %>
 </ul>
 
-<div class="btn btn-dark">
-  <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
-</div>
-
-<div class="btn btn-dark">
-<%= link_to 'Back to all restaurants', restaurants_path %>
-</div>
+<h3>Leave a review</h3>
+<%= render 'form', review: @review %>
+<BR><BR>
