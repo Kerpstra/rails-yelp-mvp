@@ -1,1 +1,14 @@
-<h1>Index of Restaurants</h1>
+<h1>Restaurants</h1>
+
+  <p>Click on each restaurant to see details</p>
+
+  <p><ul class="list-group">
+    <% @restaurants.each do |restaurant| %>
+      <li class="list-group-item p-2 btn btn-primary">
+      <%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <% end %>
+  </ul></p>
+
+<p><strong>Have a suggestion?</strong>
+   <%= link_to'Click here to add a restaurant', new_restaurant_path %>
+   </p>

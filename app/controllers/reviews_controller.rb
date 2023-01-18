@@ -9,6 +9,8 @@ class ReviewsController < ApplicationController
   def create
     # restaurant id is set in the before action
     @review = Review.new(review_params)
+    # set the restaurant id in the review
+    @review.restaurant = @restaurant
 
     # try to save, if saving was succesfull
     if @review.save
@@ -30,6 +32,6 @@ class ReviewsController < ApplicationController
 
   def review_params
     # params require for review is singular NOT plural
-    params.require(:review).permit(:rating, :content, :restaurant_id)
+    params.require(:review).permit(:rating, :content)
   end
 end
